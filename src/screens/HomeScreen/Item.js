@@ -17,13 +17,13 @@ const Item = ({ value, gotoDetails }) => {
                     start={{x: 0, y: 0}}
                     end={{x: 1, y: 1}}
                     style={HomeItemStyles.linearGradient}>
-                        <Text style={HomeItemStyles.title}>{value.title}</Text>
+                        <Text style={HomeItemStyles.title}>{value.API}</Text>
                         <View style={HomeItemStyles.priceContainer}>
                             <Text style ={HomeItemStyles.initialPrice}>$ {value.price}</Text>
                             <Text style ={HomeItemStyles.discountPrice}>$ {value.discountPrice}</Text>
                         </View>
                         <View style={HomeItemStyles.authorContainer}>
-                            <Text style ={HomeItemStyles.authorName}>By {value.author}</Text>
+                            <Text style ={HomeItemStyles.authorName}>By {value.Category}</Text>
                         </View>
                 </LinearGradient>
             </View>
