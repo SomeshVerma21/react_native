@@ -1,40 +1,23 @@
 
 import React, {useState} from 'react';
-import {
-  StyleSheet,View,Text,Image
-} from 'react-native';
-import LoginScreen from './component/AuthService/LoginScreen'
-import RegisterScreen from './component/AuthService/RegisterScreen';
-import styles from './component/AuthService/styles';
-import shapeStyle from './component/AuthService/shapeStyles';
-
+import {StyleSheet, View, Text, Image} from 'react-native'
+import Home from './src/screens/HomeScreen/Home';
+import DetailsScreen from './src/screens/HomeScreen/DetailsScreen'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const App = () => {
-  const [screen,setScreen] = useState("login");
 
-  const changeScreen = () => {
-    if(screen =='login'){
-      setScreen('register')
-    }else if('register'){
-      setScreen('login')
-    }
-  }
+  const Stack = createNativeStackNavigator()
 
-  const flipCard = () => {
-
-  }
-
-  return(
-    <View style={styles.mainScreen}>
-      <View style={shapeStyle.card}>
-      {
-        (screen == "login") ? <LoginScreen changeScreen = {changeScreen}/> 
-          : <RegisterScreen changeScreen={changeScreen}/>
-      }
-      </View>
-    </View>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
-
 }
 
 export default App;

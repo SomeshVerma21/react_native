@@ -2,7 +2,12 @@
 import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
-    mainScreen:{flex:1,flexDirection:'column',justifyContent:'center',alignItems:'center'},
+    mainScreen:{flex:1,
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'#54f52'
+    },
     container:{
         flex:1,
         flexDirection:'column',
